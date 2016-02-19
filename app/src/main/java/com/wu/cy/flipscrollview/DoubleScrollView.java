@@ -88,8 +88,6 @@ public class DoubleScrollView extends ViewGroup {
 
         if(!isMeasured) {
             isMeasured = true;
-            mViewHeight = getMeasuredHeight();
-            mViewWidth = getMeasuredWidth();
 
             mTopView = getChildAt(0);
             mBottomView = getChildAt(1);
@@ -97,6 +95,9 @@ public class DoubleScrollView extends ViewGroup {
             mTopView.setOnTouchListener(topViewTouchListener);
             mBottomView.setOnTouchListener(bottomViewTouchListener);
         }
+
+        mViewHeight = getMeasuredHeight();
+        mViewWidth = getMeasuredWidth();
 
         int size = getChildCount();
         for (int i = 0; i < size; ++i) {
